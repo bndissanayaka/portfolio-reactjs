@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import "./heroImage.css";
-import {dataArray} from "../dataArray";
+import * as Constants from "../Constants";
+import { dataArray, linkArray } from "../dataArray";
 
 function WorkSection() {
   const workSecRef = useRef(null);
@@ -12,7 +13,7 @@ function WorkSection() {
     <div className="home__worksection__container">
       <div className="worksection__box">
         <p className="worksection__box__text">
-          <p onClick={() => scrollHandle(workSecRef)}>Work</p>
+          <p onClick={() => scrollHandle(workSecRef)}>{Constants.MAIN_TEXT1}</p>
         </p>
       </div>
       <div className="worksection__verticalLine__box">
@@ -29,7 +30,6 @@ function WorkSection() {
           ))}
         </div>
       </div>
-
       <div className="worksection__verticalLine__box">
         <div className="verticalLine__box__left"></div>
         <div className="verticalLine__box__right"></div>
@@ -43,21 +43,10 @@ function WorkSection() {
           />
         </div>
         <div className="about__box__right">
-          <p className="about__box__right--p1">About</p>
-          <p className="about__box__right--p2">
-            I’m a passionate software engineer, a self-taught frontend
-            developer, a fast learner, innovative, curious, highly motivated
-            with a 'can-do' approach.
-          </p>
-          <p>
-            Creative thinking and attention to detail are my underline
-            strengths.
-          </p>
-          <p>
-            Switching my programming career to front-end development is a
-            long-awaited transition. Having been a backend software engineer for
-            3+ years, I am now aspiring to become a good front-end developer.
-          </p>
+          <p className="about__box__right--p1">{Constants.MAIN_TEXT2}</p>
+          <p className="about__box__right--p2">{Constants.ABOUT_P1}</p>
+          <p className="about__box__right--p2">{Constants.ABOUT_P2}</p>
+          <p className="about__box__right--p2">{Constants.ABOUT_P3}</p>
         </div>
       </div>
       <div className="worksection__verticalLine__box">
@@ -70,40 +59,28 @@ function WorkSection() {
             href="mailto:bndissanayaka@gmail.com"
             className="worksection__box__link"
           >
-            Contact
+            {Constants.MAIN_TEXT3}
           </a>
         </p>
       </div>
       <div className="contact__links">
         <div className="contact__links__icons">
-          <div className="worksection__contact__link">
-            <a href="https://github.com/bndissanayaka">
-              <img src="./images/git.svg" alt="git" className="contact__imgs" />
-            </a>
-          </div>
-          <div className="worksection__contact__link">
-            <a href="https://medium.com/@bhagyabhagya">
-              <img
-                src="./images/medium.svg"
-                alt="medium"
-                className="contact__imgs"
-              />
-            </a>
-          </div>
-          <div className="worksection__contact__link">
-            <a href="mailto:bndissanayaka@gmail.com">
-              <img
-                src="./images/email.svg"
-                alt="email"
-                className="contact__imgs"
-              />
-            </a>
-          </div>
+          {linkArray.map((item,index) => (
+              <div className="worksection__contact__link" key={index}>
+              <a href={item.href}>
+                <img
+                  src={item.image}
+                  alt="img"
+                  className="contact__imgs"
+                />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
       <footer>
         <p className="footer__text">
-          &copy; 2022 D.A.B. Nirmani. All rights reserved.
+          &copy; {Constants.COPYRIGHT_TEXT}
         </p>
         <br />
       </footer>

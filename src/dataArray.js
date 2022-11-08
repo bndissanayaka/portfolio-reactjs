@@ -21,3 +21,19 @@ export const dataArray = [
     },
 
 ]
+
+export const linkArray = [
+    {
+        "href" : "https://github.com/bndissanayaka",
+        "image" : "./images/git.svg"
+    },
+    {
+        "href" : "https://medium.com/@bhagyabhagya",
+        "image" : "./images/medium.svg"
+    },
+    {
+        "href" : "mailto:bndissanayaka@gmail.com",
+        "image" : "./images/email.svg"
+    },
+
+]
