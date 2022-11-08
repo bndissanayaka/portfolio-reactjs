@@ -22,10 +22,12 @@ function WorkSection() {
         <div className="worksection__profiles__box">
           <img src="./images/pf1.svg" alt="pf1" className="profiles__one" />
           <p>Tesla Clone Website</p>
+          <img src="./images/pf5.svg" alt="pf5" className="profiles__one" />
+          <p>My Portfolio Webpage developed with React v18.0</p>
           <img src="./images/pf2.svg" alt="pf2" className="profiles__one" />
-          <p>My Personal Website</p>
+          <p>My Personal Webpage developed using HTML, CSS and JavaScript</p>
           <img src="./images/pf3.svg" alt="pf2" className="profiles__one" />
-          <p>LinkedIn Clon App</p>
+          <p>LinkedIn Clone App</p>
           <img src="./images/pf4.svg" alt="pf2" className="profiles__one" />
           <p>A platformer game with Phaser3</p>
         </div>
