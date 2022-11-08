@@ -22,10 +22,10 @@ function WorkSection() {
       <div className="worksection__profiles" ref={workSecRef}>
         <div className="worksection__profiles__box">
           {dataArray.map((item, index) => (
-            <>
+            <div key={index}>
               <img src={item.image} alt="pf" className="profiles__one" />
               <p>{item.txt}</p>
-            </>
+            </div>
           ))}
         </div>
       </div>
