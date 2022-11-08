@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
 import "./heroImage.css";
+import {dataArray} from "../dataArray";
 
 function WorkSection() {
-    const workSecRef = useRef(null);
-    const scrollHandle = (ref) => {
-        if (!ref.current) return;
-        ref.current.scrollIntoView({behavior: 'smooth'})
-    }
+  const workSecRef = useRef(null);
+  const scrollHandle = (ref) => {
+    if (!ref.current) return;
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="home__worksection__container">
       <div className="worksection__box">
@@ -18,18 +19,14 @@ function WorkSection() {
         <div className="verticalLine__box__left"></div>
         <div className="verticalLine__box__right"></div>
       </div>
-      <div className="worksection__profiles" ref={workSecRef}  >
+      <div className="worksection__profiles" ref={workSecRef}>
         <div className="worksection__profiles__box">
-          <img src="./images/pf1.svg" alt="pf1" className="profiles__one" />
-          <p>Tesla Clone Website</p>
-          <img src="./images/pf5.svg" alt="pf5" className="profiles__one" />
-          <p>My Portfolio Webpage developed with React v18.0</p>
-          <img src="./images/pf2.svg" alt="pf2" className="profiles__one" />
-          <p>My Personal Webpage developed using HTML, CSS and JavaScript</p>
-          <img src="./images/pf3.svg" alt="pf2" className="profiles__one" />
-          <p>LinkedIn Clone App</p>
-          <img src="./images/pf4.svg" alt="pf2" className="profiles__one" />
-          <p>A platformer game with Phaser3</p>
+          {dataArray.map((item, index) => (
+            <>
+              <img src={item.image} alt="pf" className="profiles__one" />
+              <p>{item.txt}</p>
+            </>
+          ))}
         </div>
       </div>
 
